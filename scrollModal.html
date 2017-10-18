@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/4/w3.css"/>
+    <script type="text/javascript" src="scrollmodal.js"></script>
+    <title>scroll modal</title>
+</head>
+<body>
+    <div class="w3-container">
+        <button class="w3-button w3-blue" onclick="getElementById('modal-table1').style.display='block'">
+            Abrir modal
+        </button>
+    </div>
+    <div class="w3-container">
+
+      <div class="w3-modal" id="modal-table1">
+          <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+            <header class="w3-container w3-teal">
+                <span onclick="getElementById('modal-table1').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                <h2>Scroll modal table in modal</h2>
+            </header>
+            <div class="w3-container " style="height:300px; overflow-y:scroll;" >
+                <table id="table-content" class="w3-content" >
+
+                </table>
+                  
+            </div>
+          </div>
+      </div>
+
+    </div>
+
+</body>
+</html>
