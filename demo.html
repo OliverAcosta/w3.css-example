@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Demo W3.css</title>
+    <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/4/w3.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style> 
+        #search {
+            width: 20px;
+            box-sizing: border-box;
+            border: 0px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: transparent;
+           
+            background-position: 10px 10px; 
+            background-repeat: no-repeat;
+         
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+            
+        }
+        
+        #search:focus {
+            width: 100%;
+            border: 2px solid #ccc;
+            background-color: white;
+            z-index: 4000;
+        }
+        </style>
+   
+</head>
+<body>
+    <div class="w3-bar w3-black w3-border w3-xlarge">
+        <a href="#" class="w3-bar-item w3-button  w3-green" id="selected" onclick="menuClick(this)"><i class="fa fa-home"></i></a>
+        <a href="#"  class="w3-bar-item" onclick="menuClick(this)"><button class="w3-black w3-border-0 w3-hover-hide"><i class="fa fa-search"></i><input type="text" id="search" name="search" placeholder="Buscar.."></button></a>
+        <a href="#" class="w3-bar-item w3-button " onclick="menuClick(this)"><i class="fa fa-envelope"></i></a>
+        <a href="#" class="w3-bar-item w3-button " onclick="menuClick(this)"><i class="fa fa-globe"></i></a>
+        <a href="#" class="w3-bar-item w3-button " onclick="menuClick(this)"><i class="fa fa-sign-in"></i></a>
+      </div>
+      <script type="text/javascript" src="appBase.js"></script>
+</body>
+</html>
