@@ -1,30 +1,45 @@
+Vue.component('button-counter', {
+    template: '<button v-on:click="incrementCounter">{{ counter }}</button>',
+    data: function () {
+      return {
+        counter: 0
+      }
+    },
+    methods: {
+      incrementCounter: function () {
+        this.counter += 1
+        this.$emit('increment')
+      }
+    },
+  })
+  new Vue({
+    el: '#counter-event-example',
+    data: {
+      total: 0
+    },
+    methods: {
+      incrementTotal: function () {
+        this.total += 1
+      }
+    }
+  });
 
-var data = {
-    progressBarData:0
-};
-    Vue.component('progress-bar', {
-        template:`
-        <div class="w3-border">
-        <div v-bind:style="sstyle" v-bind:class="classes">{{percent}}</div>
-        </div>`,
-        data: function()
-        {
-        
-        sstyle = {
-                height : "24px",
-                width  : data.progressBarData + "%"
-        };
-        return {
-            sstyle:sstyle,
-            classes : "w3-green",
-            percent : data.progressBarData 
-        }
-        }
-
-    });
+  new Vue({
+    el: '#counter-event-example2',
+    data: {
+      total: 0
+    },
+    methods: {
+      incrementTotal: function () {
+        this.total += 1
+      }
+    }
+  });
 
 
-data.progressBarData  = 22;
+
+
+
 new Vue({
      el:"#bar1"
      

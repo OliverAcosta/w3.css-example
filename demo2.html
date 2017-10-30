@@ -17,9 +17,19 @@
         <progress-bar></progress-bar>
     </div>
     <div id="bar2">
-            <progress-bar></progress-bar>
-        </div>
-</div>  
+        <progress-bar></progress-bar>
+   </div>
+</div> 
+<div id="counter-event-example">
+    <p>{{ total }}</p>
+    <button-counter v-on:increment="incrementTotal"></button-counter>
+    <button-counter v-on:increment="incrementTotal"></button-counter>
+  </div>
+  <div id="counter-event-example2">
+    <p>{{ total }}</p>
+    <button-counter v-on:increment="incrementTotal"></button-counter>
+    <button-counter v-on:increment="incrementTotal"></button-counter>
+  </div> 
 </div>
 <script type="text/javascript" src="vuecss.js"></script>
 </body>
