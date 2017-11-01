@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://www.w3schools.com/w3css/4/w3.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.2/vue.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+    <title>Todo List</title>
+</head>
+<body>
+<div class="w3-content">
+<div class="w3-card-4"  style="height:600px;">   
+    <div class="w3-container w3-green">
+        <h2>Todo List</h2>
+    </div>
+  <div class="w3-container" id="todo">
+      <div>
+      <label for="task">Tarea</label>
+      <input type="text" id="task" v-model="task" class="w3-input w3-border">
+      <label for="desc ">Desc</label>
+      <textarea id="desc"  v-model="desc" class="w3-input w3-border"></textarea>
+      <!-- <div class="w3-padding"></div> -->
+      <button class="w3-button w3-green w3-right w3-margin" v-bind:click="add()">agregar</button>
+    </div>
+
+        <div class="w3-row w3-container">
+            <div class="w3-col m4 w3-container" style="overflow-y:auto;">
+                <ul class="w3-ul" >
+                        <li><h2>Lista</h2></li>
+                    <li v-for="item in items" v-bind:click="showDesc()" class="w3-border">{{item.task}}</li>
+                </ul>
+            </div>
+            <div class="w3-col m8 w3-container ">
+                <textarea name="" id=""  class="w3-right w3-margin-0" style="width:100%;"></textarea>
+            </div>
+        </div>
+        <div class="w3-margin"></div>
+
+  </div>
+</div> 
+</div>
+   <script type="text/javascript" src="todo.js"></script>
+</body>
+</html>
