@@ -43,7 +43,7 @@ var menuAccess = new Vue({
     methods:{
       linkAccess: function(url)
       {
-        console.log(url);
+       
           var canView = userAccess.find(function(b)
           {
                  return b.url === url && b.canView === true;
@@ -56,8 +56,8 @@ var menuAccess = new Vue({
 });
 
 window.onbeforeunload = function() {
-    
-    return 'Texto de aviso';
+    console.log("element unload");
+    return '';
 }
 
 if (!window.indexedDB) {
