@@ -13,13 +13,15 @@
     <header class="w3-container w3-xlarge">
          <h2> progress bars</h2>         
     </header>
-    <div id="bar1">
-        <progress-bar></progress-bar>
+   
     </div>
-    <div id="bar2">
-            <progress-bar></progress-bar>
-        </div>
+   
 </div>  
+<div id="mymodal">
+   
+    <modal v-bind:mensaje="mensaje"></modal>
+    <button onclick="document.getElementById('modal-error').style.display = 'block'">show modal</button>
+</div>
 </div>
 <script type="text/javascript" src="vuecss.js"></script>
 </body>
