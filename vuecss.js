@@ -1,4 +1,43 @@
+Vue.component('button-counter', {
+    template: '<button v-on:click="incrementCounter">{{ counter }}</button>',
+    data: function () {
+      return {
+        counter: 0
+      }
+    },
+    methods: {
+      incrementCounter: function () {
+        this.counter += 1
+        this.$emit('increment')
+      }
+    },
+  })
+  new Vue({
+    el: '#counter-event-example',
+    data: {
+      total: 0
+    },
+    methods: {
+      incrementTotal: function () {
+        this.total += 1
+      }
+    }
+  });
 
+  new Vue({
+    el: '#counter-event-example2',
+    data: {
+      total: 0
+    },
+    methods: {
+      incrementTotal: function () {
+        this.total += 1
+      }
+    }
+  });
+
+
+<<<<<<< HEAD
   var pb  = new Vue({
     el: '#sample',
     data: {
@@ -40,6 +79,9 @@ template: `<div class="w3-modal" id="modal-error">
   <span class="w3-button w3-display-topright" onclick="document.getElementById('modal-error').style.display = 'none'">&times;</span>
   
     <h2>Se ha producido un error, por favor contactar con el administrador.</h2>
+=======
+
+>>>>>>> 8af0c5ca2a50fb774bda3e0ba3cbf0aa4a7bd754
 
   </header>
  <div class="w3-container" style="height:200px; overflow-y:auto !important;">
@@ -52,6 +94,12 @@ template: `<div class="w3-modal" id="modal-error">
 </div>`,
 props:['mensaje'],
 
+<<<<<<< HEAD
+=======
+new Vue({
+     el:"#bar1"
+     
+>>>>>>> 8af0c5ca2a50fb774bda3e0ba3cbf0aa4a7bd754
 });
 var data = "";
 var i = 0;
