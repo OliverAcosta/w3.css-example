@@ -12,28 +12,35 @@
 <body>
 <div class="w3-content">
 <div class="w3-card-4"  style="height:600px;">   
+  
     <div class="w3-container w3-green">
         <h2>Todo List</h2>
     </div>
+    <div class="w3-margin"></div>
   <div class="w3-container" id="todo">
       <div>
-      <label for="task">Tarea</label>
-      <input type="text" id="task" v-model="task" class="w3-input w3-border">
-      <label for="desc ">Desc</label>
+      <label for="tarea">Tarea</label>
+      <input type="text" id="tarea" v-model="tarea" class="w3-input w3-border">
+      <label for="desc">Desc</label>
       <textarea id="desc"  v-model="desc" class="w3-input w3-border"></textarea>
       <!-- <div class="w3-padding"></div> -->
-      <button class="w3-button w3-green w3-right w3-margin" v-bind:click="add()">agregar</button>
+      <button class="w3-button w3-green w3-right w3-margin w3-hover-black" style="resize: none !important;" v-on:click="add()">agregar</button>
     </div>
 
-        <div class="w3-row w3-container">
-            <div class="w3-col m4 w3-container" style="overflow-y:auto;">
+        <div class="w3-row">
+                <h2>Lista</h2>
+            <div class="w3-col m4" style="overflow-y:auto; max-height:200px;min-width:200px !important;">
+                  
                 <ul class="w3-ul" >
-                        <li><h2>Lista</h2></li>
-                    <li v-for="item in items" v-bind:click="showDesc()" class="w3-border">{{item.task}}</li>
+                    <li v-for="item in items" v-on:click="showDesc(item.tarea)" class="w3-border w3-hover-green w3-display-container">
+                       {{item.tarea}}
+                        <span v-on:click="deleteItem(item)" 
+                        class="w3-button w3-display-right w3-hover-red">&times;</span>
+                    </li>
                 </ul>
             </div>
-            <div class="w3-col m8 w3-container ">
-                <textarea name="" id=""  class="w3-right w3-margin-0" style="width:100%;"></textarea>
+            <div class="w3-col m8">
+                <textarea name="txtDesc" v-model="currentDesc" id="txtDesc" class="w3-right w3-margin-0 w3-white" rows="9" style="width:95%;" disabled></textarea>
             </div>
         </div>
         <div class="w3-margin"></div>
