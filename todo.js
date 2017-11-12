@@ -26,15 +26,15 @@ var todolistapp = new Vue({
         tarea:"",
         desc:"",
         currentDesc:"",
-        self: this,
         items:[]
     },
     methods:{
         add: function(){
-            if(tarea.trim() == ""){ return;}
+        if(this.tarea.trim() == ""){ return;}
+       
            db.tareas.add({ tarea:this.tarea, desc:this.desc})
             .then(function(index){
-                todolistapp.items.push(new newTarea(index,this.tarea, this.desc));
+                todolistapp.items.push(new newTarea(index,todolistapp.tarea, todolistapp.desc));
                 todolistapp.tarea = "";
                 todolistapp.desc = "";
             }).catch(function(error)
@@ -44,18 +44,21 @@ var todolistapp = new Vue({
         },
         deleteItem: function(t)
         {
+           
             let current =  this.items.findIndex(function(e){
              return e == t;
             });
             if(current !== undefined)
             {
-                db.tareas.where("id").equals(t.id).delete().then(function(index){
+                db.tareas.where("id").equals(t.id).delete()
+                .then(function(index){
                     todolistapp.items.splice(current,1);
-                    console.log("id borrado", index);
+                   // console.log("id borrado", index);
                 }).catch(function(error){
-                    console.error(error);
+                    console.error("se ha producido un error en la bd", error);
                 });
             }
+            this.currentDesc = "";
            
         },
         showDesc:function(t){

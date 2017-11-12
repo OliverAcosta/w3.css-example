@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function persona(){
+   if( !(typeof new.target !== "undefined")) {
+       throw new Error("No ha instanciado la clase " + persona.name);
+       console.log(typeof new.target);
+   }else{
+    console.log(typeof new.target);
+   }
+   this.nombre = arguments[0];
+   this.name = arguments[0];
+}
+
+
+ var p = new persona("juan");
+//alert(persona().nombre);
+var p2 = new persona("jose");
+// var perso = persona.call(p,"oliver");
+     let vv = v => v*22;
+        console.log(vv(10));
+        (function (nombre)
+        {
+            console.log(`hola ${nombre}`)
+        })("fernando");
+        ((nombre => console.log(`hola ${nombre}`))("Melisa"));
+        var a = [2,45,8,9];
+        console.log(a.sort((a,b)=>a-b));
+        ((a,b)=>console.log(a-b))(10,5);
+        let object1 = {nombre:"oliver",apellido:"perez"};
+        let object2 = {};
+        Object.assign(object2,object1);
+        console.log(object2);
+</script>
+</body>
+</html>

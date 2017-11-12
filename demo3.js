@@ -60,6 +60,11 @@ window.onbeforeunload = function() {
     return '';
 }
 
-if (!window.indexedDB) {
-    window.alert("Su navegador no soporta una versión estable de indexedDB.Tal y como las características no serán validas");
-}
+// register
+Vue.component('my-component', {
+    template: '<div>A custom component!</div>'
+  })
+  // create a root instance
+  new Vue({
+    el: '#example'
+  })

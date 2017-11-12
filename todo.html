@@ -29,7 +29,7 @@
 
         <div class="w3-row">
                 <h2>Lista</h2>
-            <div class="w3-col m4" style="overflow-y:auto; max-height:200px;min-width:200px !important;">
+            <div class="w3-container w3-third " style="overflow-y:auto; max-height:200px;">
                   
                 <ul class="w3-ul" >
                     <li v-for="item in items" v-on:click="showDesc(item.tarea)" class="w3-border w3-hover-green w3-display-container">
@@ -39,7 +39,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="w3-col m8">
+            <div class="w3-container w3-rest">
                 <textarea name="txtDesc" v-model="currentDesc" id="txtDesc" class="w3-right w3-margin-0 w3-white" rows="9" style="width:95%;" disabled></textarea>
             </div>
         </div>
